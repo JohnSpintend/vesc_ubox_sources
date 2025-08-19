@@ -233,7 +233,7 @@
 
 // Default setting overrides
 #ifndef MCCONF_L_MIN_VOLTAGE
-#define MCCONF_L_MIN_VOLTAGE			12.0		// Minimum input voltage
+#define MCCONF_L_MIN_VOLTAGE			16.0		// Minimum input voltage
 #endif
 #ifndef MCCONF_L_MAX_VOLTAGE
 #define MCCONF_L_MAX_VOLTAGE			128.0	// Maximum input voltage
