@@ -14,7 +14,6 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     */
-//Copy from "hw_100_250.h"
 
 #include "hw.h"
 
@@ -345,7 +344,7 @@ static THD_FUNCTION(shutdown_thread, arg) {
 	uint64_t odometer_old = mc_interface_get_odometer();
 
 	for(;;)	{
-		uint8_t power_key_click = 0;
+		//uint8_t power_key_click = 0;
 		uint32_t sys_time_ms = chVTGetSystemTime() / (float)CH_CFG_ST_FREQUENCY * 1000.0f;
 
 		float dt = (float)chVTTimeElapsedSinceX(last_iteration_time) / (float)CH_CFG_ST_FREQUENCY;
@@ -368,7 +367,7 @@ static THD_FUNCTION(shutdown_thread, arg) {
 	        } else {
 	            if((power_key_pressed_ms > 50) && (power_key_pressed_ms < 500)) {
 					// TODO: Could toggle different led types here??
-	                power_key_click = 1;
+	                //power_key_click = 1;
 	            }
 	            power_key_pressed_ms = 0;
 	        }
