@@ -251,10 +251,10 @@
 #define MCCONF_FOC_SAMPLE_V0_V7			false	// Run control loop in both v0 and v7 (requires phase shunts)
 #endif
 #ifndef MCCONF_L_IN_CURRENT_MAX
-#define MCCONF_L_IN_CURRENT_MAX			84.0	// Input current limit in Amperes (Upper)
+#define MCCONF_L_IN_CURRENT_MAX			160.0	// Input current limit in Amperes (Upper)
 #endif
 #ifndef MCCONF_L_IN_CURRENT_MIN
-#define MCCONF_L_IN_CURRENT_MIN			-65.0	// Input current limit in Amperes (Lower)
+#define MCCONF_L_IN_CURRENT_MIN			-100.0	// Input current limit in Amperes (Lower)
 #endif
 
 // Setting limits
@@ -269,9 +269,9 @@
 #endif
 
 #ifdef HW_UBOX_SINGLE_126_160
-	#define HW_LIM_VIN				11.0, 130.0
+	#define HW_LIM_VIN				16.0, 130.0
 #else
-	#define HW_LIM_VIN				11.0, 130.0
+	#define HW_LIM_VIN				16.0, 130.0
 #endif
 
 #define HW_LIM_ERPM				-200e3, 200e3
