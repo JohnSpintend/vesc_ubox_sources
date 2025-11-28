@@ -24,12 +24,13 @@
 
 #define HW_SHUTDOWN_CUSTOM
 
-#ifdef HW_UBOX_SINGLE_126_160
-#define HW_NAME		"UBOX_SINGLE_126_160"
+#ifdef HW_UBOX_126_160
+#define HW_NAME		"UBOX_126_160"
+#elif defined HW_UBOX_126_100
+#define HW_NAME		"UBOX_126_100"
 #else
 #error "Must define hardware type"
 #endif
-
 
 // HW properties
 #define HW_HAS_3_SHUNTS
@@ -257,27 +258,21 @@
 #define MCCONF_L_IN_CURRENT_MAX			160.0	// Input current limit in Amperes (Upper)
 #endif
 #ifndef MCCONF_L_IN_CURRENT_MIN
-#define MCCONF_L_IN_CURRENT_MIN			-100.0	// Input current limit in Amperes (Lower)
+#define MCCONF_L_IN_CURRENT_MIN			-128.0	// Input current limit in Amperes (Lower)
 #endif
 
 // Setting limits
-#ifdef HW_UBOX_SINGLE_126_160
-	#define HW_LIM_CURRENT			-300, 300.0
-	#define HW_LIM_CURRENT_IN		-300.0, 300.0
-	#define HW_LIM_CURRENT_ABS		0.0, 420.0
+#ifdef HW_UBOX_126_160
+	#define HW_LIM_CURRENT			-240, 240.0
+	#define HW_LIM_CURRENT_IN		-240.0, 240.0
+	#define HW_LIM_CURRENT_ABS		0.0, 290.0
 #else
 	#define HW_LIM_CURRENT			-150.0, 150.0
 	#define HW_LIM_CURRENT_IN		-150.0, 150.0
-	#define HW_LIM_CURRENT_ABS		0.0,210.0
+	#define HW_LIM_CURRENT_ABS		0.0, 180.0
 #endif
 
-#ifdef HW_UBOX_SINGLE_126_160
-	#define HW_LIM_VIN				16.0, 130.0
-#else
-	#define HW_LIM_VIN				16.0, 130.0
-#endif
-
-
+#define HW_LIM_VIN				16.0, 130.0
 #define HW_LIM_ERPM				-200e3, 200e3
 #define HW_LIM_DUTY_MIN			0.0, 0.1
 #define HW_LIM_DUTY_MAX			0.0, 0.99
@@ -287,4 +282,3 @@
 float hw100_250_get_temp(void);
 
 #endif /* HW_UBOX_126_CORE_H_ */
-
